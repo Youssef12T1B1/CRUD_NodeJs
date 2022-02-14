@@ -1,0 +1,37 @@
+.card{
+    background-color: white;
+}
+.table{
+    border-spacing: Opx;
+    width: 100%;
+    color: black;
+}
+.table td, .table th{
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+
+}
+.table td > a.btn{
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em ;
+    color: black;
+}
+.table td > a.delete:hover{
+    background-color: red;
+}
+
+.table td > a.btn:hover{
+    box-shadow: none;
+}
+.table tr:hover{
+    background-color: rgb(139, 139, 139);
+}
+
+.table .thead th{
+color: white;
+background-color: black;
+border-color: #32383e;
+}
