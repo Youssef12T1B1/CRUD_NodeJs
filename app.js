@@ -4,11 +4,14 @@ const morgan = require('morgan')
 const ejslayouts = require('express-ejs-layouts')
 const bodyparser = require('body-parser')
 const indexRoute = require('./routes/indexRoute')
+const userRoute = require('./routes/userRoute')
+const connectDb = require('./config/db')
 
+connectDb()
 const app = express()
 
-dotenv.config({path: './config/.env'})
-const PORT = process.env.PORT || 5000
+// dotenv.config({path: './config/.env'})
+const PORT = require('./config/.env').PORT || 5000
 
 app.use(express.static('static'));
 
@@ -22,6 +25,7 @@ app.set('view engine', 'ejs')
 
 //routes
 app.use(indexRoute)
+app.use(userRoute)
 
 
 

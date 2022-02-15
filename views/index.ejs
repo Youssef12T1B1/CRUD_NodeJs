@@ -1,34 +1,16 @@
 
-   <nav class="grey darken-3">
-    <div class="nav-wrapper container">
-    
-    <a href="" class="brand-logo center"> CRUD APP</a>
-    <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large">
-       <i class="fas fa-bars"></i>
-    </a>
-    <ul class="sidenav" id="mobile-demo">
-    
-    <li><a href="/">Home</a></li>
-    <li><a href="/logout">Logout</a></li>
-    
-    </ul>
-    
-    </div>
-    
-    
-    </nav>
 
     
         <div class="divider"></div>
  
         <div class="row mt-5">
-            <div class="col-md-8 m-auto">
+            <div class="col-md-10 m-auto">
 
-                <div class="section">
-                    <a href="signup/" class="btn red darken-1">
+                <!-- <div class="section">
+                    <a href="create-user" class="btn red darken-1">
                     <i class="fas fa-user left"></i> New User  
                     </a>
-                </div>
+                </div> -->
                 <div class="card card-body text-center">
                     <form action="" method="post">
                         <table class="table">
@@ -44,21 +26,25 @@
 
                             </thead>
                             <tbody>
+                                <% for (var i=0 ; i< users.length;++i){%>
                                 <tr>
-                                    <td>ID</td>
-                                    <td>uusssss</td>
-                                    <td>jjhhhhhh@mmmmmmmgm</td>
-                                    <td>Male</td>
-                                    <td>Active</td>
+                                    <td><%= i+1 %></td>
+                                    <td><%= users[i].username %></td>
+                                    <td><%= users[i].email  %></td>
+                                    <td><%= users[i].gender %></td>
+                                    <td><%= users[i].status  %></td>
                                     <td>
-                                        <a href="" class="btn border-shadow update"> <span class="text-gradient">
+
+                                        <a href="/update-user?id=<%= users[i]._id  %>" class="btn border-shadow update"> <span class="text-gradient">
                                             <i class="fas fa-pencil-alt"></i>
                                         </span> </a>
-                                        <a href="" class="btn border-shadow delete"> <span class="text-gradient">
+                                        <a  class="btn border-shadow delete" data-id= <%= users[i]._id  %> > <span class="text-gradient">
                                             <i class="fas fa-times"></i>
                                         </span> </a>
                                     </td>
+                                   
                                 </tr>
+                                <% } %>
                             </tbody>
                         </table>
 
@@ -68,4 +54,9 @@
                     </form>
         </div>
         </div>
+        </div>
+        <div class="fixed-action-btn">
+
+
+            <a href="create-user" class="btn-floating btn-large waves-effect waves-lightred"><i class="fas fa-plus"></i></a>
         </div>

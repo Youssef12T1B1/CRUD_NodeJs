@@ -1,10 +1,8 @@
-.card{
-    background-color: white;
-}
+
 .table{
     border-spacing: Opx;
     width: 100%;
-    color: black;
+    color: white;
 }
 .table td, .table th{
     padding: .75em;
@@ -17,8 +15,15 @@
     padding: .3em 1em;
     font-size: 1.1em;
     margin: 0 .2em ;
-    color: black;
+    
 }
+
+input{
+
+    display: inline;
+ 
+ }
+
 .table td > a.delete:hover{
     background-color: red;
 }
@@ -31,7 +36,26 @@
 }
 
 .table .thead th{
-color: white;
-background-color: black;
+color: black;
+background-color: white;
 border-color: #32383e;
+}
+
+@media only screen and (max-width:1024px){
+    table, thead, tbody, th ,td ,tr {
+        display: block;
+    }
+    thead tr{
+        position:absolute;
+        top: -9999px;
+        left: -9999px;
+
+    }
+    tr{
+        border: 0.5px solid ;
+    }
+    td{
+        border-bottom: 0.5px solid ;
+        position: relative;
+    }
 }

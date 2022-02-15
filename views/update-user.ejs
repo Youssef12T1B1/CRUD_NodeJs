@@ -1,0 +1,57 @@
+<div class="divider"></div>
+      
+      
+        <div class="row mt-5">
+            <a href="/"><i class="fas fa-angle-double-left"></i>All Users</a>
+            <form action="" method="post" class="col s12" id="UpdateUser">
+                <h2 class="text-center">Update User</h2>
+                <input type="hidden" name="id" value="<%= user._id %>">
+            <div class="row mt-4">
+                <div class="input-field ">
+            
+                    <input  style="color:white"  type="text" name="username" id="username" value="<%= user.username %>">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field ">
+            
+                    <input style="color:white"  type="email" name="email" id="email" value="<%= user.email %>"> 
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field ">
+                    <select  name="gender" id="gender">
+            
+                        <option  value="male"  <%= user.gender =='male' ? 'selected':''  %>>Male</option>
+                        <option   value="female"  <%= user.gender =='female' ? 'selected':'' %>>Female</option>
+                        <option  value="other" <%= user.gender =='other' ? 'selected':''  %> >Other</option>
+                        
+                    </select>
+                    <label for="Gender">Gender</label>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="input-field">
+                    <select name="status" id="status" >
+            
+                        <option  value="active"  <%= user.status =='active' ? 'selected':''  %>>Active</option>
+                        <option value="inactive"  <%= user.status =='inactive' ? 'selected':''  %> >Inactive</option>
+                        
+                    </select>
+                    <label for="status">Status</label>
+                </div>
+            </div>
+            
+            <div class="row ">
+                <input type="submit" value="Save" class="btn">
+                <a href="/" class="btn orange">Cancel</a>
+            </div>
+            
+            </form>
+            
+            </div>
+            
